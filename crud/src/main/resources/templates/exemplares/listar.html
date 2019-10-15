@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head th:replace="header/head.html :: head"></head>
+<body>
+	<div th:replace="header/navbar.html :: div"></div>
+	<div class="main-panel">
+		<div class="content">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="card">
+							<div class="card-header card-header-warning">
+								<h4 class="card-title ">Exemplares</h4>
+
+							</div>
+							<div class="card-body">
+								<div class="table-responsive">
+									<table class="table">
+										<thead class=" text-warning">
+											<th>Nome</th>
+											<th>Autor</th>
+											<th>Categoria</th>
+											<th>Ano</th>
+											<th>Quantidade</th>
+											<th></th>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Ola Mundo</td>
+												<td>DK</td>
+												<td>Romance</td>
+												<td>2019</td>
+												<td>10</td>
+												<td class="td-actions text-center"><a><button
+															type="button" rel="tooltip" title="Editar"
+															class="btn btn-info btn-link btn-sm">
+															<i class="material-icons">edit</i>
+														</button></a> <a><button type="button" rel="tooltip" title="Exluir"
+															class="btn btn-danger btn-link btn-sm">
+															<i class="material-icons">close</i>
+														</button></a></td>
+											</tr>
+
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+		<div th:replace="rodape/rodape.html :: footer"></div>
+		<script th:src="@{scripts/header.js}"></script>
+</body>
+</html>

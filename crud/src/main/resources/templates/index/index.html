@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+
+
+<head th:replace="header/head.html :: head"></head>
+<body>
+
+<div th:replace="header/navbar.html :: div"></div>
+
+		<div class="main-panel">
+			<nav
+				class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+				<div class="container-fluid">
+					<div class="navbar-wrapper">
+						<a class="navbar-brand" >Inicio</a>
+					</div>
+					<button class="navbar-toggler" type="button" data-toggle="collapse"
+						aria-controls="navigation-index" aria-expanded="false"
+						aria-label="Toggle navigation">
+						<span class="sr-only"></span> <span
+							class="navbar-toggler-icon icon-bar"></span> <span
+							class="navbar-toggler-icon icon-bar"></span> <span
+							class="navbar-toggler-icon icon-bar"></span>
+					</button>
+					
+				</div>
+				
+			</nav>
+			<!-- End Navbar -->
+			<div class="content">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-lg-3 col-md-6 col-sm-6">
+							<div class="card card-stats">
+								<div class="card-header card-header-success card-header-icon">
+									<div class="card-icon">
+										<i class="material-icons">content_copy</i>
+									</div>
+									<p class="card-category">Locações</p>
+									<h3 class="card-title" >
+									teste
+									</h3>
+								</div>
+								<div class="card-footer">
+									<div class="stats">
+										
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6 col-sm-6">
+							<div class="card card-stats">
+								<div class="card-header card-header-success card-header-icon">
+									<div class="card-icon">
+										<i class="material-icons">library_books</i>
+									</div>
+									<p class="card-category">Exemplares</p>
+									<h3 class="card-title" th:text="${contaExemplares}"></h3>
+								</div>
+								<div class="card-footer">
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6 col-sm-6">
+							<div class="card card-stats">
+								<div class="card-header card-header-success card-header-icon">
+									<div class="card-icon">
+										<i class="material-icons">person</i>
+									</div>
+									<p class="card-category">Locatários</p>
+									<h3 class="card-title" th:text="${contaLocatarios}"></h3>
+								</div>
+								<div class="card-footer">
+									<div class="stats">
+										
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6 col-sm-6">
+							<div class="card card-stats">
+								<div class="card-header card-header-success card-header-icon">
+									<div class="card-icon">
+										<i class="fa fa-globe"></i>
+									</div>
+									<p class="card-category">Acesso Diário</p>
+									<h3 class="card-title">+1200</h3>
+								</div>
+								<div class="card-footer">
+									<div class="stats">
+			
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+		<div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-info">
+                  <h4 class="card-title ">Lançamentos</h4>
+                  
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead class=" text-info">
+                        <th>
+                          Nome
+                        </th>
+                        <th>
+                          Autor
+                        </th>
+                        <th>
+                          Ano
+                        </th>
+                        <th>
+                          Categoria 
+                        </th>
+                      </thead>
+                      <tbody>
+                        <tr data-th-each="exemplares : ${exemplares}">
+                          <td data-th-text="${exemplares.nome}">
+                          </td>
+                          <td data-th-text="${exemplares.autor}">
+                          </td>
+                          <td data-th-text="${exemplares.ano}">
+                          </td>
+                          <td data-th-text="${exemplares.categoria}">
+                          </td>
+                        </tr>
+                        
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+
+
+
+					<div th:replace="rodape/rodape.html :: footer"></div>
+					
+				</div>
+			</div>
+
+			<script th:src="@{scripts/header.js}"></script>
+</body>
+</html>

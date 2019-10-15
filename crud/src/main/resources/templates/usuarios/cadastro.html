@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Cadastro Usuario</title>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	<h2>Cadastro Usuario</h2>
+	<br>
+	<form th:action="@{/usuarios/salvar}" method="post">
+		<input class="form-control" type="text" name="nome" placeholder="Nome Completo" required autofocus/>
+		<br>
+		<input class="form-control" type="text" id="login" name="login" onblur="valida_form(f1.login)" placeholder="Usuario para login" required/>
+		<div id="msglogin"></div>
+		<br>
+		<input class="form-control" type="password" name="senha" placeholder="Senha" required onblur="verificaSenha()"/>
+		<br>
+		<input class="form-control" type="password" name="confirmaSenha" placeholder="Confirmar senha" required onblur="verificaSenha()"/>
+		<div id="msgsenha"></div>
+		<input class="form-control" type="text" name="biblioteca" placeholder="Nome biblioteca" required/>
+		
+		<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+		<button class="btn btn-success" type="submit">Cadastrar</button>
+	</form>
+</body>
+<script th:src="@{scripts/core/jquery.min.js}"></script>
+<script th:src="@{scripts/plugins/jquery.validate.min.js}"></script>
+<script type="text/javascript">
+	function verificaSenha() {
+		senha = document.f1.senha.value;
+		confirmaSenha = document.f1.confirmaSenha.value;
+		if (senha == "" && confirmaSenha == "") {
+			document.getElementById("msgsenha").innerHTML = "<font color='red'>Os campos de senha não podem ficar vazios </font>";
+		} else {
+			if (senha != confirmaSenha) {
+				document.getElementById("msgsenha").innerHTML = "<font color='red'>As senhas não coincidem </font>";
+			} else {
+				document.getElementById("msgsenha").innerHTML = "<font color='green'>As senhas coincidem </font>";
+			}
+		}
+	};
+
+</script>
+</html>
