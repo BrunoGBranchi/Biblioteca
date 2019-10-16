@@ -13,6 +13,7 @@ public class LocacaoService {
 	private LocacaoRepository locacaoRepository;
 
 	public void salvar(Locacao locacao) {
+		locacao.calculaDias();
 		locacaoRepository.saveAndFlush(locacao);
 	}
 

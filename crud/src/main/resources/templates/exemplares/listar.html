@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org">
-<head th:replace="header/head.html :: head"></head>
+<head th:replace="header/head.html :: head"><meta charset="UTF-8"/></head>
 <body>
 	<div th:replace="header/navbar.html :: div"></div>
 	<div class="main-panel">
@@ -22,23 +22,27 @@
 											<th>Categoria</th>
 											<th>Ano</th>
 											<th>Quantidade</th>
-											<th></th>
+											<th class="text-right"><a href="/exemplares/cadastro"><button type="button" rel="tooltip" title="Novo"
+															class="btn btn-warning btn-sm">
+															<i class="material-icons" style="font-size:35px;">add</i>
+														</button></a></th>
 										</thead>
 										<tbody>
-											<tr>
-												<td>Ola Mundo</td>
-												<td>DK</td>
-												<td>Romance</td>
-												<td>2019</td>
-												<td>10</td>
-												<td class="td-actions text-center"><a><button
-															type="button" rel="tooltip" title="Editar"
+											<tr data-th-each="e : ${exemplares}">
+												<td data-th-text="${e.nome}"></td>
+												<td data-th-text="${e.autor}"></td>
+												<td data-th-text="${e.categoria}"></td>
+												<td data-th-text="${e.ano}"></td>
+												<td data-th-text="${e.quantidade}"></td>
+												<td class="td-actions text-center"><a th:href="@{'/exemplares/editar/' + ${e.id}}"><button type="button" rel="tooltip" title="Editar"
 															class="btn btn-info btn-link btn-sm">
 															<i class="material-icons">edit</i>
-														</button></a> <a><button type="button" rel="tooltip" title="Exluir"
+														</button></a> 
+														<a th:href="@{'/exemplares/excluir/' + ${e.id}}"><button type="button" rel="tooltip" title="Exluir"
 															class="btn btn-danger btn-link btn-sm">
 															<i class="material-icons">close</i>
 														</button></a></td>
+
 											</tr>
 
 										</tbody>

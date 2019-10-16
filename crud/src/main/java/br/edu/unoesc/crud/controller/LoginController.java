@@ -23,7 +23,14 @@ public class LoginController {
 	
 	@RequestMapping(path = {"/login"}, method = RequestMethod.GET)
 	public String loginPage( @RequestParam(value = "error", required = false) String error, @RequestParam(value = "logout", required = false) String logout, Model model) {
-		model.addAttribute("errorMessge", loginService.validaLogin(error, logout));
+		String errorMessge = null;
+		if (error != null) {
+			errorMessge = "Usuario ou senha incorreta!!";
+		}
+		if (logout != null) {
+			errorMessge = "Logout feito com sucesso!!";
+		}
+		model.addAttribute("errorMessage", errorMessge);
 		return "index/index";
 	}
 

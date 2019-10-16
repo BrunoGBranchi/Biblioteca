@@ -2,7 +2,7 @@
 <html xmlns:th="https://www.thymeleaf.org">
 
 
-<head th:replace="header/head.html :: head"></head>
+<head th:replace="header/head.html :: head"><meta charset="UTF-8"/></head>
 <body>
 
 <div th:replace="header/navbar.html :: div"></div>
@@ -36,10 +36,8 @@
 									<div class="card-icon">
 										<i class="material-icons">content_copy</i>
 									</div>
-									<p class="card-category">LocaÁıes</p>
-									<h3 class="card-title" >
-									teste
-									</h3>
+									<p class="card-category">Loca√ß√µes</p>
+									<h3 class="card-title" th:text="${contalocacao}"></h3>
 								</div>
 								<div class="card-footer">
 									<div class="stats">
@@ -67,7 +65,7 @@
 									<div class="card-icon">
 										<i class="material-icons">person</i>
 									</div>
-									<p class="card-category">Locat·rios</p>
+									<p class="card-category">Locat√°rios</p>
 									<h3 class="card-title" th:text="${contaLocatarios}"></h3>
 								</div>
 								<div class="card-footer">
@@ -83,7 +81,7 @@
 									<div class="card-icon">
 										<i class="fa fa-globe"></i>
 									</div>
-									<p class="card-category">Acesso Di·rio</p>
+									<p class="card-category">Acesso Di√°rio</p>
 									<h3 class="card-title">+1200</h3>
 								</div>
 								<div class="card-footer">
@@ -101,7 +99,7 @@
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-info">
-                  <h4 class="card-title ">LanÁamentos</h4>
+                  <h4 class="card-title ">Lan√ßamentos</h4>
                   
                 </div>
                 <div class="card-body">

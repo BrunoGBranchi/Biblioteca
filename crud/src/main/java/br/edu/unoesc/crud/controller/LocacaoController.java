@@ -53,12 +53,12 @@ public class LocacaoController {
 	@RequestMapping(path = "/excluir/{id}")
 	public String excluir(@PathVariable(value = "id") Long id, Locacao locacao) {
 		locacaoService.excluir(id, locacao);
-		return "redirect:locacao/listar";
+		return "redirect:/locacao/listar";
 	}
 
 	// Metodo para listar
 	@RequestMapping(path = { "/listar" })
-	public String mostrar(Model model) {
+	public String mostrar(Model model, Locacao locacao) {
 		model.addAttribute("locacao", locacaoRepository.findAll());
 		return "locacao/listar";
 	}

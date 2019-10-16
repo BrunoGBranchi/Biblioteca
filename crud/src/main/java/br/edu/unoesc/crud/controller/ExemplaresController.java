@@ -49,7 +49,7 @@ public class ExemplaresController {
 	@RequestMapping(path = "/excluir/{id}")
 	public String excluir(@PathVariable(value = "id") Long id, Exemplares exemplares) {
 		exemplaresService.excluir(id, exemplares);
-		return "redirect:exemplares/listar";
+		return "redirect:/exemplares/listar";
 	}
 
 	@RequestMapping(path = "/editar/{id}")

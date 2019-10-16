@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org">
-<head th:replace="header/head.html :: head"></head>
+<head th:replace="header/head.html :: head"><meta charset="UTF-8"/></head>
 
 <body>
 	<div th:replace="header/navbar.html :: div"></div>
@@ -9,7 +9,7 @@
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" >Locat·rio</a>
+            <a class="navbar-brand" >Locat√°rio</a>
           </div>
           </div>
           
@@ -20,7 +20,7 @@
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-danger">
-                  <h4 class="card-title">Cadastro de Locat·rio</h4>
+                  <h4 class="card-title">Cadastro de Locat√°rio</h4>
                    
                 </div>
                 <div class="card-body">
@@ -29,25 +29,25 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating">Nome Completo</label>
-                          <input type="text" class="form-control" name="nome" required>
+                          <input type="text" class="form-control" name="nome" required autofocus>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
-                          <label class="bmd-label-floating">EndereÁo</label>
+                          <label class="bmd-label-floating">Endere√ßo</label>
                           <input type="text" class="form-control" name="endereco" required>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating">CPF</label>
-                          <input type="number" class="form-control" name="cpf" required>
+                          <input type="number" id="cpf" class="form-control" name="cpf" required>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating">Telefone</label>
-                          <input type="number" class="form-control" name="telefone" required>
+                          <input type="number" id="telefone" class="form-control" name="telefone" required>
                         </div>
                       </div>
                     </div>
@@ -71,8 +71,10 @@
 
 
 	<div th:replace="rodape/rodape.html :: footer"></div>
-
 <script th:src="@{scripts/header.js}"></script>
+
+
+
 	
 </body>
 </html>

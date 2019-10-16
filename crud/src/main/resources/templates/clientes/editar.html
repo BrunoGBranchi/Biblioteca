@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org">
-<head th:replace="header/head.html :: head"></head>
+<head th:replace="header/head.html :: head"><meta charset="UTF-8"/></head>
 
 <body>
 	<div th:replace="header/navbar.html :: div"></div>
@@ -9,7 +9,7 @@
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" >Locat·rio</a>
+            <a class="navbar-brand" >Locat√°rio</a>
           </div>
           </div>
           
@@ -20,7 +20,7 @@
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-danger">
-                  <h4 class="card-title">EdiÁ„o de Locat·rio</h4>
+                  <h4 class="card-title">Edi√ß√£o de Locat√°rio</h4>
                    
                 </div>
                 <div class="card-body">
@@ -35,7 +35,7 @@
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
-                          <label class="bmd-label-floating">EndereÁo</label>
+                          <label class="bmd-label-floating">Endere√ßo</label>
                           <input type="text" class="form-control" name="endereco" th:value="${clientes.endereco}" required>
                         </div>
                       </div>

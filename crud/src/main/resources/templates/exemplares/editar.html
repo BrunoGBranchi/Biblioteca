@@ -20,28 +20,29 @@
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-warning">
-                  <h4 class="card-title">Cadastro de Exemplares</h4>
+                  <h4 class="card-title">Edição de Exemplares</h4>
                    
                 </div>
                 <div class="card-body">
-                  <form th:action="@{/exemplares/salvar}" method="post">
+                  <form th:action="@{/exemplares/salvarEditado}" method="POST">
                     <div class="row">
                       <div class="col-md-6">
+                      <input type="hidden" name="id" th:value="${exemplares.id}">
                         <div class="form-group">
                           <label class="bmd-label-floating">Nome Do Exemplar</label>
-                          <input type="text" class="form-control" name="nome" required autofocus>
+                          <input type="text" class="form-control" name="nome" th:value="${exemplares.nome}" required>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating">Autor</label>
-                          <input type="text" class="form-control" name="autor" required>
+                          <input type="text" class="form-control" name="autor" th:value="${exemplares.autor}" required>
                         </div>
                       </div>
                       <div class="col-md-7">
                         <div class="form-group">
                           <label class="bmd-label-floating">Categoria</label>
-                          <input type="text" class="form-control" name="categoria" required>
+                          <input type="text" class="form-control" name="categoria" th:value="${exemplares.categoria}" required>
                         </div>
                       </div>
                     
@@ -49,13 +50,13 @@
                       <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating">Ano</label>
-                          <input type="number" class="form-control" name="ano" required>
+                          <input type="number" class="form-control" name="ano" th:value="${exemplares.ano}" required>
                         </div>
                       </div>
                       <div class="col-md-2">
                         <div class="form-group">
                           <label class="bmd-label-floating">Quantidade</label>
-                          <input type="number" class="form-control" name="quantidade" required>
+                          <input type="number" class="form-control" name="quantidade" th:value="${exemplares.quantidade}" required>
                         </div>
                       </div>
                     </div>

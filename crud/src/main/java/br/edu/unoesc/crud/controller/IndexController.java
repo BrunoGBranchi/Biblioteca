@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.edu.unoesc.crud.Repository.ClienteRepository;
 import br.edu.unoesc.crud.Repository.ExemplaresRepository;
+import br.edu.unoesc.crud.Repository.LocacaoRepository;
 
 @Controller
 @RequestMapping({"/index", "/", ""})
@@ -18,12 +19,17 @@ public class IndexController {
 	@Autowired
 	private ClienteRepository clientesRepository;
 	
+	@Autowired
+	private LocacaoRepository locacaoRepository;
+	
     @GetMapping({"/index", "", "/"})
     public String index(Model model){
     	model.addAttribute("exemplares", exemplatesRepository.cincoPrimeiros());
     	model.addAttribute("contaExemplares", exemplatesRepository.count());
     	model.addAttribute("contaLocatarios", clientesRepository.count());
-        return "index/index";
+    	model.addAttribute("contalocacao", locacaoRepository.count());
+
+    	return "index/index";
     }
 
 }
